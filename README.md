@@ -3,6 +3,9 @@ RTW Location
 
 Tracking Stuart on his recreation of Thomas Stevens 1884 around the world bike ride: http://strudel.org.uk/RTWbike by receiving an SMS from Stuart and updating [this map](https://gist.github.com/arfon/11101663).
 
+[![screen shot 2014-04-20 at 11 53 53](https://cloud.githubusercontent.com/assets/4483/2751026/7831a11e-c8ac-11e3-88b1-e5b180be6d36.png)](https://gist.github.com/arfon/11101663)
+
+
 ### Why?
 
 Stuart has an old phone and a GPS with him so I figured we should make a SMS service he can post his lat, long and an optional message to that would set his position on a map for all to see.
