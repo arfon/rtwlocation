@@ -12,10 +12,10 @@ get '/' do
 end
 
 post '/sms-receive' do
-  lat_lng = params[:Body]
-  lat, lng = lat_lng.split(',').map(&:strip)
+  lat_lng_msg = params[:Body]
+  lat, lng, msg = lat_lng_msg.split(',').map(&:strip)
   
-  current_location = latest_geom_position_from(lat,lng)
+  current_location = latest_geom_position_from(lat,lng, msg)
   update_gist_location(current_location)
   
   twiml = Twilio::TwiML::Response.new do |r|
@@ -34,15 +34,15 @@ def update_gist_location(position)
   })
 end
 
-def latest_geom_position_from(lat,lng)
+def latest_geom_position_from(lat,lng, msg = nil)
   position = Hash.new
   
   position["type"] = "Feature"
   position["properties"] = {
     "marker-symbol" => "star",
     "marker-size" => "large",
-    "desc" => "Stuart's last location",
-    "time" => Time.now.to_s
+    "Desc" => "Stuart's last location",
+    "Time" => Time.now.to_s
   }
   position["geometry"] = {
     "type" => "Point",
@@ -51,6 +51,9 @@ def latest_geom_position_from(lat,lng)
       lat.to_f
     ]
   }
+  
+  # Set the message property if there is one
+  position["properties"]["Message"] = msg if msg
   
   return position
 end
