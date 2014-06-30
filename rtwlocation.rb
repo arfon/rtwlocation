@@ -19,7 +19,7 @@ post '/sms-receive' do
   update_gist_location(current_location)
   
   twiml = Twilio::TwiML::Response.new do |r|
-    r.Message "OK, I've got you at https://www.google.com/maps/preview?q=##{lat},#{lng}"
+    r.Message "OK, I've got you at https://maps.google.com/maps/preview?q=#{lat},#{lng}"
   end
   twiml.text
 end
