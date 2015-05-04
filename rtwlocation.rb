@@ -55,5 +55,6 @@ def latest_geom_position_from(lat,lng, msg = nil)
   # Set the message property if there is one
   position["properties"]["Message"] = msg if msg
 
+  puts "POSITION: #{position}"
   return position
 end
