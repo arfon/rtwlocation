@@ -1,21 +1,21 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    addressable (2.3.6)
+    addressable (2.3.8)
     builder (3.2.2)
-    faraday (0.9.0)
+    faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
     jwt (0.1.11)
       multi_json (>= 1.5)
     multi_json (1.9.2)
     multipart-post (2.0.0)
     newrelic_rpm (3.7.2.192)
-    octokit (3.1.0)
-      sawyer (~> 0.5.3)
+    octokit (3.8.0)
+      sawyer (~> 0.6.0, >= 0.5.3)
     rack (1.5.2)
     rack-protection (1.5.3)
       rack
-    sawyer (0.5.4)
+    sawyer (0.6.0)
       addressable (~> 2.3.5)
       faraday (~> 0.8, < 0.10)
     sinatra (1.4.5)
@@ -33,6 +33,6 @@ PLATFORMS
 
 DEPENDENCIES
   newrelic_rpm
-  octokit (~> 3.1.0)
+  octokit (~> 3.8.0)
   sinatra (~> 1.4.5)
   twilio-ruby (~> 3.11.5)
