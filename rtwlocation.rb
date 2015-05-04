@@ -14,6 +14,7 @@ end
 post '/sms-receive' do
   lat_lng_msg = params[:Body]
   lat, lng, msg = lat_lng_msg.split(',').map(&:strip)
+  puts "INCOMING: #{lat_lng_msg}"
 
   current_location = latest_geom_position_from(lat,lng, msg)
   update_gist_location(current_location)
