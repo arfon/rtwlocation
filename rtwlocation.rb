@@ -8,7 +8,7 @@ configure :production do
 end
 
 get '/' do
-  "Alive!"
+  "I'm alive!"
 end
 
 post '/sms-receive' do
